@@ -11,7 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-    // echo "haloo";
-});
+// Route::get('/', function () {
+//     return view('welcome');
+//     // echo "haloo";
+// });
+
+Route::get('/', 'ExcelController@index');
+Route::get('export', 'ExcelController@exportExcel')->name('export');
+Route::post('excel/upload', 'ExcelController@upload')->name('upload');
